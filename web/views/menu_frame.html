@@ -1,0 +1,34 @@
+<section layout="row" flex ng-controller="menuFrameController">
+    <!-- Left section -->
+    <!-- Left sidenav -->
+    <div>
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+        <md-toolbar class="md-theme-indigo"><h1 class="md-toolbar-tools"><a href="#/">Itty Bitty Note</h1></md-toolbar></a>
+            <md-content layout-padding>
+                <md-list>
+                <md-list-item><ng-md-icon icon="announcement"></ng-md-icon><a href="#/note/list"><md-button class="md-primary">Note List</md-button></a></md-list-item>
+                <md-list-item><ng-md-icon icon="developer_dashboard"></ng-md-icon><a href="#/note/add"><md-button class="md-primary">Note Add</md-button></a></md-list-item>
+
+                </md-list>
+            </md-content>
+            <md-card>
+    </md-card>
+    </md-sidenav>
+    </div>
+    <!-- Right Section -->
+    <section layout="column" flex>
+      <!-- Right Titlebar -->
+      <div>
+        <md-toolbar flex>
+            <div class="md-toolbar-tools">
+                <h2>{{$rootScope.currentPage}}</h2>
+                <md-button class="md-primary md-raised" ng-click="toggle()">Toggle Menu</md-button>
+            </div>
+        </md-toolbar>
+      </div>
+      <!-- Right Main Content Area -->
+        <div class="page-content" id="main" flex>
+            <div ng-view></div>
+        </div>
+    </section>
+</section>
