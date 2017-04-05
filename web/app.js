@@ -1,4 +1,4 @@
-app = angular.module('IttyBittyNote', [ 'ngRoute', 'ngMaterial', 'ngMdIcons']);
+app = angular.module('IttyBittyNote', [ 'ngRoute', 'ngMaterial']);
 api_root = 'http://127.0.0.1:9000'
 
 app.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
@@ -7,11 +7,17 @@ app.config(function($routeProvider, $locationProvider, $mdThemingProvider) {
 		controller: 'noteController'
 	}).when("/note/add", {
 		templateUrl : 'views/note_add.html',
-		controller: 'deployController',
-		title: 'Deploy Controller'
-	}).otherwise({
-		redirectTo: '/note/list'
+		controller: 'noteController'
 	})
+	 $locationProvider.html5Mode(true);
 });
 
-angular.module('IttyBittyNote')
+
+// app.config(function($mdThemingProvider) {
+//   $mdThemingProvider
+//     .theme('default')
+//     .primaryPalette('blue')
+//     .accentPalette('pink')
+//     .warnPalette('red')
+//     .backgroundPalette('grey');
+// });
